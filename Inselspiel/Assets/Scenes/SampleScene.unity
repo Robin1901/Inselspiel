@@ -120,11 +120,7 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &188111518
-=======
---- !u!1 &240347001
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
 =======
 --- !u!1 &240347001
 >>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
@@ -136,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
-<<<<<<< HEAD
   - component: {fileID: 188111519}
   - component: {fileID: 188111522}
   - component: {fileID: 188111521}
@@ -144,15 +139,10 @@ GameObject:
   m_Layer: 0
   m_Name: Cube
 =======
-=======
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
   - component: {fileID: 240347003}
   - component: {fileID: 240347002}
   m_Layer: 0
   m_Name: SkyManager
-<<<<<<< HEAD
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
-=======
 >>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,11 +150,8 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!4 &188111519
 =======
-=======
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
 --- !u!114 &240347002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,16 +165,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkyManager
 --- !u!4 &240347003
-<<<<<<< HEAD
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
-=======
 >>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 188111518}
   serializedVersion: 2
@@ -277,8 +260,6 @@ MeshFilter:
   m_GameObject: {fileID: 188111518}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 =======
-=======
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
   m_GameObject: {fileID: 240347001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -288,9 +269,6 @@ MeshFilter:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
-=======
 >>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
 --- !u!1 &330585543
 GameObject:
@@ -1519,11 +1497,7 @@ SceneRoots:
   - {fileID: 1748828935}
   - {fileID: 1926926075}
 <<<<<<< HEAD
-<<<<<<< HEAD
   - {fileID: 1234431204}
-=======
-  - {fileID: 240347003}
->>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
 =======
   - {fileID: 240347003}
 >>>>>>> 5e2dae65eb13de5078c131036d3c8430436a7513
