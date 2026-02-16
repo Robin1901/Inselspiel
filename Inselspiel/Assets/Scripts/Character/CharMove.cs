@@ -40,7 +40,7 @@ public class CharMove : MonoBehaviour
     void Update()
     {
 
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
 
         // sprint when Left Shift is held (only changes horizontal speed)
         float currentSpeed = speed;
