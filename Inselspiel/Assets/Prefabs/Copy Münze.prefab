@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6201493299780657042}
   - component: {fileID: 2179557342895360271}
   - component: {fileID: 1743990948626504562}
+  - component: {fileID: 1220324243603114233}
+  - component: {fileID: 6659643071183091976}
   m_Layer: 0
   m_Name: "Copy M\xFCnze"
   m_TagString: Untagged
@@ -165,4 +167,38 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.020000001, y: 0.0015000012, z: 0.022}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1220324243603114233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779007576726521908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cf959feebc260479fcb6b261f59be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::CopyM\xFCnzeEinsammeln"
+  spawner: {fileID: 0}
+--- !u!135 &6659643071183091976
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779007576726521908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.008
   m_Center: {x: 0, y: 0, z: 0}
