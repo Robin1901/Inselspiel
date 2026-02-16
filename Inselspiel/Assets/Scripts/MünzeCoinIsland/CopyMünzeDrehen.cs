@@ -8,7 +8,7 @@ public class CopyMünzeDrehen : MonoBehaviour
     private bool landed = false;
     private Vector3 landedPosition;
 
-    private float currentZ = 0f;
+    private float currentZ;
 
     void Start()
     {
@@ -31,13 +31,17 @@ public class CopyMünzeDrehen : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.isKinematic = true;
+            rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
-            // Start-Z merken
-            currentZ = transform.eulerAngles.z;
+            Quaternion baseRot = Quaternion.Euler(-90f, 0f, 0f);
+            Quaternion relative = Quaternion.Inverse(baseRot) * transform.rotation;
+            float z = relative.eulerAngles.z;
+            if (z > 180f) z -= 360f;
+            currentZ = z;
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (landed)
         {
@@ -45,7 +49,7 @@ public class CopyMünzeDrehen : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(-90f, 0f, currentZ);
 
-            currentZ += spinSpeed * Time.fixedDeltaTime;
+            currentZ += spinSpeed * Time.deltaTime;
 
 
         }
