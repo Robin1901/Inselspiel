@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6201493299780657042}
   - component: {fileID: 2179557342895360271}
   - component: {fileID: 1743990948626504562}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "Copy M\xFCnze"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2779007576726521908}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.34101, y: 0, z: -4.49314}
+  m_LocalPosition: {x: 0, y: 6, z: -0}
   m_LocalScale: {x: 35, y: 35, z: 35}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -164,5 +164,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020000001, y: 0.0015000012, z: 0.020000007}
+  m_Size: {x: 0.020000001, y: 0.005, z: 0.022}
   m_Center: {x: 0, y: 0, z: 0}
