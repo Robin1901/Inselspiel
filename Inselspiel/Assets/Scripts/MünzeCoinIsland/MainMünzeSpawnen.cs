@@ -5,9 +5,11 @@ public class MainMünzeSpawnen : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
     private float minDropInterval = 3f;
     private float maxDropInterval = 5f;
-
     private float timer;
     private float nextDropTime;
+
+    public int maxCoins = 30;
+    public int currentCoins = 0;
 
     void Start()
     {
@@ -20,8 +22,10 @@ public class MainMünzeSpawnen : MonoBehaviour
         if (timer >= nextDropTime)
         {
             timer = 0f;
-            SpawnCoin();
-
+            if (currentCoins < maxCoins)
+            {
+                SpawnCoin();
+            }
             nextDropTime = Random.Range(minDropInterval, maxDropInterval);
         }
     }
@@ -29,6 +33,17 @@ public class MainMünzeSpawnen : MonoBehaviour
     private void SpawnCoin()
     {
         Vector3 spawnPos = transform.position;
-        Instantiate(coinPrefab, spawnPos, transform.rotation);
+        GameObject newCoin = Instantiate(coinPrefab, spawnPos, transform.rotation);
+        currentCoins++;
+
+        CopyMünzeEinsammeln coinScript = newCoin.GetComponent<CopyMünzeEinsammeln>();
+        if (coinScript != null)
+        {
+            coinScript.spawner = this;
+        }
+        else
+        {
+            Debug.LogWarning("Prefab hat kein CopyMünzeEinsammeln Script");
+        }
     }
 }
