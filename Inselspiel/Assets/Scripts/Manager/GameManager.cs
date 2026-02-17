@@ -9,12 +9,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Debug.Log("Money: " + characterMoney);
     }
 
     public void AddMoney(int amount)
     {
         characterMoney += amount;
-        Debug.Log("Money: " + characterMoney);
     }
 }
