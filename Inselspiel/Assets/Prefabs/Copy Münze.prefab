@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2179557342895360271}
   - component: {fileID: 1220324243603114233}
   - component: {fileID: 3941774493099312388}
+  - component: {fileID: 116454394097728043}
   m_Layer: 3
   m_Name: "Copy M\xFCnze"
   m_TagString: Untagged
@@ -181,5 +182,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020000001, y: 0.0015, z: 0.02}
+  m_Size: {x: 0.005, y: 0.001, z: 0.01}
+  m_Center: {x: 0, y: 0, z: -0.005}
+--- !u!135 &116454394097728043
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779007576726521908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.0100000035
   m_Center: {x: 0, y: 0, z: 0}
