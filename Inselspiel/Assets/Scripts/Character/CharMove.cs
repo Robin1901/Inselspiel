@@ -13,6 +13,9 @@ public class CharMove : MonoBehaviour
     private Vector2 moveInput;
     private Vector3 velocity;
 
+    public AudioSource source;
+    public AudioClip sprung;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +35,7 @@ public class CharMove : MonoBehaviour
         if (context.performed && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHight * -1.5f * gravity);
+            source.Play();
         }
     }
 

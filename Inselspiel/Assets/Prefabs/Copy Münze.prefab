@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::CopyM\xFCnzeEinsammeln"
   spawner: {fileID: 0}
+  coinCollect: {fileID: 8300000, guid: e70edf19e9acf0b4a9c3c560af054b1f, type: 3}
 --- !u!65 &3941774493099312388
 BoxCollider:
   m_ObjectHideFlags: 0
