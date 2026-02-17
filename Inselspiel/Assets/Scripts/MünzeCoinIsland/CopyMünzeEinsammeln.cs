@@ -5,6 +5,7 @@ public class CopyMünzeEinsammeln : MonoBehaviour
 {
     public MainMünzeSpawnen spawner;
     public AudioClip coinCollect;
+    public int coinWorth = 1;
 
     private bool isCollected = false;
 
@@ -31,7 +32,7 @@ public class CopyMünzeEinsammeln : MonoBehaviour
         }
 
         GetComponent<Collider>().enabled = false;
-
+        GameManager.Instance.AddMoney(coinWorth);
         StartCoroutine(AnimatePickup());
     }
 
