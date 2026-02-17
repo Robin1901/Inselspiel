@@ -9,7 +9,7 @@ public class MainMünzeSpawnen : MonoBehaviour
     private float nextDropTime;
 
     public int maxCoins = 30;
-    public int currentCoins = 0;
+    [HideInInspector] public int currentCoins = 0;
 
     void Start()
     {

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CopyMünzePush : MonoBehaviour
 {
-    private float minDropForce = 2f;
-    private float maxDropForce = 4f;
+    private float minDropForce = 0.3f;
+    private float maxDropForce = 4.5f;
 
     private Rigidbody rb;
 
