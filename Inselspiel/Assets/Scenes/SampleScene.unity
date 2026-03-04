@@ -40823,7 +40823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -638, y: 395}
+  m_AnchoredPosition: {x: -638, y: 388}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555629024
@@ -40886,8 +40886,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40925,7 +40925,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -114.73901, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -113453,7 +113453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522672131}
   m_Layer: 6
-  m_Name: grass_group
+  m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113467,7 +113467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522672130}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -115396,7 +115396,7 @@ Transform:
   - {fileID: 401309443}
   - {fileID: 1624223471}
   - {fileID: 234407123}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1748828935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1522759559
 PrefabInstance:
@@ -132405,6 +132405,7 @@ Transform:
   - {fileID: 543450653064078327}
   - {fileID: 118087561}
   - {fileID: 8228731492341754820}
+  - {fileID: 1522672131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1750205382
@@ -158196,4 +158197,3 @@ SceneRoots:
   - {fileID: 952842536}
   - {fileID: 1260433077}
   - {fileID: 1657389460}
-  - {fileID: 1522672131}

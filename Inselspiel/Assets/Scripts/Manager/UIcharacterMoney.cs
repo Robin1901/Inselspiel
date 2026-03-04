@@ -17,6 +17,6 @@ public class UIcharacterMoney : MonoBehaviour
 
     void Update()
     {
-        moneyText.text = gameManager.characterMoney.ToString() + "€";
+        moneyText.text = "Money: " + gameManager.characterMoney.ToString();
     }
 }
