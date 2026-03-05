@@ -3,35 +3,43 @@ using UnityEngine;
 public class MainMünzeSpawnen : MonoBehaviour
 {
     [SerializeField] private GameObject coinPrefab;
-    private float minDropInterval = 3f;
-    private float maxDropInterval = 5f;
-    private float timer;
-    private float nextDropTime;
+
+    private float timer = 0f;
+    private float dropInterval = 3f;
 
     public int maxCoins = 30;
     [HideInInspector] public int currentCoins = 0;
 
     void Start()
     {
-        nextDropTime = Random.Range(minDropInterval, maxDropInterval);
+        if (GameManager.Instance != null)
+            dropInterval = GameManager.Instance.coinSpawnSpeed;
     }
 
     void Update()
     {
+        if (GameManager.Instance != null)
+            dropInterval = GameManager.Instance.coinSpawnSpeed;
+
         timer += Time.deltaTime;
-        if (timer >= nextDropTime)
+        if (timer >= dropInterval)
         {
             timer = 0f;
             if (currentCoins < maxCoins)
             {
                 SpawnCoin();
             }
-            nextDropTime = Random.Range(minDropInterval, maxDropInterval);
         }
     }
 
     private void SpawnCoin()
     {
+        if (coinPrefab == null)
+        {
+            Debug.LogWarning("Coin Prefab ist nicht gesetzt!");
+            return;
+        }
+
         Vector3 spawnPos = transform.position;
         GameObject newCoin = Instantiate(coinPrefab, spawnPos, transform.rotation);
         currentCoins++;
@@ -45,5 +53,10 @@ public class MainMünzeSpawnen : MonoBehaviour
         {
             Debug.LogWarning("Prefab hat kein CopyMünzeEinsammeln Script");
         }
+    }
+
+    public void NotifyCoinDestroyed()
+    {
+        currentCoins = Mathf.Max(0, currentCoins - 1);
     }
 }
