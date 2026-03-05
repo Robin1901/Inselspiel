@@ -28,6 +28,29 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+
+    public bool inputBlocked = false;
+
+    public void SetInputBlocked(bool block)
+    {
+        inputBlocked = block;
+
+        if (block)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
+
+    //------------------------------------
+
+
     public void AddMoney(float value)
     {
         characterMoney += value;

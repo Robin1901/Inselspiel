@@ -8,7 +8,6 @@ public class CharMove : MonoBehaviour
     private float gravity = -20f;
     private float sprint = 10f;
 
-
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector3 velocity;
@@ -16,37 +15,42 @@ public class CharMove : MonoBehaviour
     public AudioSource source;
     public AudioClip sprung;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
     }
 
     public void onMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        if (GameManager.Instance != null && GameManager.Instance.inputBlocked)
+        {
+            moveInput = Vector2.zero;
+            return;
+        }
 
+        moveInput = context.ReadValue<Vector2>();
     }
 
     public void onJump(InputAction.CallbackContext context)
     {
+        if (GameManager.Instance != null && GameManager.Instance.inputBlocked) return;
+
         if (context.performed && controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHight * -1.5f * gravity);
-            source.Play();
+            if (source != null) source.Play();
         }
     }
 
-
-    // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.inputBlocked)
+        {
+            return;
+        }
 
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
 
-        // sprint when Left Shift is held (only changes horizontal speed)
         float currentSpeed = speed;
         if (Keyboard.current != null && Keyboard.current.leftShiftKey.isPressed)
         {
@@ -56,6 +60,5 @@ public class CharMove : MonoBehaviour
         controller.Move(move * currentSpeed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
     }
 }

@@ -21,12 +21,13 @@ public class CameraScript : MonoBehaviour
         Cursor.visible = false;
         currentX = xRotation;
         currentY = yRotation;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.inputBlocked)
+            return;
+
         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
         yRotation += mouseX;
@@ -39,7 +40,5 @@ public class CameraScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(currentX, currentY, 0);
         orientation.rotation = Quaternion.Euler(0, currentY, 0);
         character.rotation = Quaternion.Euler(0, currentY, 0);
-
-
     }
 }
