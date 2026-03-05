@@ -11,7 +11,12 @@ public class GameManager : MonoBehaviour
     public float coinWorth = 1.0f;
     public float coinWorthMultiplier = 1.2f;
     public float coinSpawnSpeed = 3.5f;
-    public float coinSpawnMultiplier = 0.92f;
+    public float coinSpawnMultiplier = 0.925f;
+
+    //------------- Prices
+
+    public float coinWorthUpgradePrice = 5f;
+    public float coinWorthPriceMultiplier = 1.5f;
 
     private void Awake()
     {
@@ -20,7 +25,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
     }
 
@@ -33,8 +37,15 @@ public class GameManager : MonoBehaviour
 
     public void UpgradeCoinWorth()
     {
-        coinWorth *= coinWorthMultiplier;
+        if (characterMoney >= coinWorthUpgradePrice)
+        {
+            characterMoney -= coinWorthUpgradePrice;
+            coinWorth *= coinWorthMultiplier;
+            coinWorthUpgradePrice *= coinWorthPriceMultiplier;
+        }
     }
+
+    //---------------------------------------------
 
     public float GetRoundedCoinWorth()
     {
@@ -46,7 +57,7 @@ public class GameManager : MonoBehaviour
         return Mathf.Round(coinWorth * coinWorthMultiplier * 10f) / 10f;
     }
 
-    //----------------------------------------------------------------
+    //-------------------------------------
 
     public void UpgradeSpawnSpeed()
     {
@@ -62,5 +73,11 @@ public class GameManager : MonoBehaviour
     public float GetNextRoundedSpawnSpeed()
     {
         return Mathf.Round(coinSpawnSpeed * coinSpawnMultiplier * 10f) / 10f;
+    }
+
+    //-------------------------------------  
+    public float GetCoinWorthUpgradePrice()
+    {
+        return Mathf.Round(coinWorthUpgradePrice * 10f) / 10f;
     }
 }
