@@ -22,7 +22,7 @@ public class CharMove : MonoBehaviour
 
     public void onMove(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance != null && GameManager.Instance.inputBlocked)
+        if (CoinIslandManager.Instance != null && CoinIslandManager.Instance.inputBlocked)
         {
             moveInput = Vector2.zero;
             return;
@@ -33,7 +33,7 @@ public class CharMove : MonoBehaviour
 
     public void onJump(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance != null && GameManager.Instance.inputBlocked) return;
+        if (CoinIslandManager.Instance != null && CoinIslandManager.Instance.inputBlocked) return;
 
         if (context.performed && controller.isGrounded)
         {
@@ -44,7 +44,7 @@ public class CharMove : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.inputBlocked)
+        if (CoinIslandManager.Instance != null && CoinIslandManager.Instance.inputBlocked)
         {
             return;
         }

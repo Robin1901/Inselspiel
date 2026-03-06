@@ -1,13 +1,11 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class CoinIslandManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static CoinIslandManager Instance;
 
-    [Header("Player")]
     public float characterMoney = 0f;
 
-    [Header("Coin Settings")]
     public float coinWorth = 1.0f;
     public float coinWorthMultiplier = 1.2f;
     public float coinSpawnSpeed = 3.5f;

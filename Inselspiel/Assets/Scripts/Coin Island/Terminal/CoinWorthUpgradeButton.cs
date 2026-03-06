@@ -23,16 +23,16 @@ public class CoinWorthUpgradeButton : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance == null || buttonText == null) return;
+        if (CoinIslandManager.Instance == null || buttonText == null) return;
 
-        float price = GameManager.Instance.GetCoinWorthUpgradePrice();
+        float price = CoinIslandManager.Instance.GetCoinWorthUpgradePrice();
         buttonText.text = $"Cost: {price}";
     }
 
     void OnUpgradeButtonClicked()
     {
-        if (GameManager.Instance == null) return;
+        if (CoinIslandManager.Instance == null) return;
 
-        GameManager.Instance.UpgradeCoinWorth();
+        CoinIslandManager.Instance.UpgradeCoinWorth();
     }
 }

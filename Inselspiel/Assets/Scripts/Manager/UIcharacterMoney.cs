@@ -3,20 +3,20 @@ using TMPro;
 
 public class UIcharacterMoney : MonoBehaviour
 {
-    private GameManager gameManager;
+    private CoinIslandManager coinIslandManager;
     public TextMeshProUGUI moneyText;
 
     void Start()
     {
-        GameObject managerObj = GameObject.Find("Game Manager");
+        GameObject managerObj = GameObject.Find("Coin Island Manager");
         if (managerObj != null)
         {
-            gameManager = managerObj.GetComponent<GameManager>();
+            coinIslandManager = managerObj.GetComponent<CoinIslandManager>();
         }
     }
 
     void Update()
     {
-        moneyText.text = "Money: " + gameManager.characterMoney.ToString();
+        moneyText.text = "Money: " + coinIslandManager.characterMoney.ToString();
     }
 }

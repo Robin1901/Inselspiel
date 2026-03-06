@@ -14,8 +14,8 @@ public class CopyMünzeEinsammeln : MonoBehaviour
 
         collected = true;
 
-        float value = GameManager.Instance.GetRoundedCoinWorth();
-        GameManager.Instance.AddMoney(value);
+        float value = CoinIslandManager.Instance.GetRoundedCoinWorth();
+        CoinIslandManager.Instance.AddMoney(value);
 
         if (coinCollect != null)
             AudioSource.PlayClipAtPoint(coinCollect, transform.position, 0.28f);

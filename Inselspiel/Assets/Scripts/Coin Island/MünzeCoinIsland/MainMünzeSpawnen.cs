@@ -12,14 +12,14 @@ public class MainMünzeSpawnen : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.Instance != null)
-            dropInterval = GameManager.Instance.coinSpawnSpeed;
+        if (CoinIslandManager.Instance != null)
+            dropInterval = CoinIslandManager.Instance.coinSpawnSpeed;
     }
 
     void Update()
     {
-        if (GameManager.Instance != null)
-            dropInterval = GameManager.Instance.coinSpawnSpeed;
+        if (CoinIslandManager.Instance != null)
+            dropInterval = CoinIslandManager.Instance.coinSpawnSpeed;
 
         timer += Time.deltaTime;
         if (timer >= dropInterval)

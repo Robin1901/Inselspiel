@@ -25,7 +25,7 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.inputBlocked)
+        if (CoinIslandManager.Instance != null && CoinIslandManager.Instance.inputBlocked) //noch ändern GameManager
             return;
 
         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
