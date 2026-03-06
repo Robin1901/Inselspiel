@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CopyMünzePush : MonoBehaviour
 {
-    private float minDropForce = 0.3f;
     private float maxDropForce = 4.5f;
 
     private Rigidbody rb;
@@ -11,7 +10,7 @@ public class CopyMünzePush : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        float dropForce = Random.Range(minDropForce, maxDropForce);
+        float dropForce = Random.Range(0f, maxDropForce);
         rb.AddForce(transform.up * dropForce, ForceMode.Impulse);
     }
 }

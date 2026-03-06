@@ -17,6 +17,11 @@ public class CoinIslandManager : MonoBehaviour
     public float coinWorthUpgradePrice = 50f;
     public float coinWorthUpgradePriceMultiplier = 1.18f;
 
+    [Header("Magnet Radius Settings")]
+    public float magnetRadius = 1.75f;
+    public float magnetRadiusUpgradePrice = 100f;
+    public float magnetRadiusUpgradePriceMultiplier = 1.1f;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -75,6 +80,19 @@ public class CoinIslandManager : MonoBehaviour
         }
     }
 
+    public void UpgradeMagnetRadius()
+    {
+        if (characterMoney >= magnetRadiusUpgradePrice && magnetRadius < 7.5f)
+        {
+            characterMoney -= magnetRadiusUpgradePrice;
+            magnetRadius += 0.25f;
+
+            if (magnetRadius > 7.5f) magnetRadius = 7.5f;
+
+            magnetRadiusUpgradePrice *= magnetRadiusUpgradePriceMultiplier;
+        }
+    }
+
     // ------------------ Werte festlegen
 
     public int GetRoundedCoinWorth()
@@ -86,6 +104,13 @@ public class CoinIslandManager : MonoBehaviour
     {
         return Mathf.FloorToInt(coinWorth * coinWorthMultiplier);
     }
+    public int GetCoinWorthUpgradePrice()
+    {
+        return Mathf.FloorToInt(coinWorthUpgradePrice);
+    }
+
+
+
 
     public float GetRoundedSpawnspeed()
     {
@@ -98,14 +123,30 @@ public class CoinIslandManager : MonoBehaviour
         if (nextSpeed < 0.5f) nextSpeed = 0.5f;
         return Mathf.Round(nextSpeed * 100f) / 100f;
     }
-
-    public int GetCoinWorthUpgradePrice()
-    {
-        return Mathf.FloorToInt(coinWorthUpgradePrice);
-    }
-
     public int GetSpawnspeedUpgradePrice()
     {
         return Mathf.FloorToInt(coinSpawnspeedUpgradePrice);
+    }
+
+
+
+
+
+
+    public float GetRoundedMagnetRadius()
+    {
+        return magnetRadius;
+    }
+
+    public float GetNextRoundedMagnetRadius()
+    {
+        float nextValue = magnetRadius + 0.25f;
+        if (nextValue > 7.5f) nextValue = 7.5f;
+        return nextValue;
+    }
+
+    public int GetMagnetRadiusUpgradePrice()
+    {
+        return Mathf.FloorToInt(magnetRadiusUpgradePrice);
     }
 }

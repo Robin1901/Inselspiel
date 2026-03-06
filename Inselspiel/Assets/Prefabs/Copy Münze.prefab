@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 1220324243603114233}
   - component: {fileID: 3941774493099312388}
   - component: {fileID: 116454394097728043}
+  - component: {fileID: 5431236689269218260}
   m_Layer: 3
   m_Name: "Copy M\xFCnze"
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,9 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cf959feebc260479fcb6b261f59be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: "Assembly-CSharp::CopyM\xFCnzeEinsammeln"
-  spawner: {fileID: 0}
   coinCollect: {fileID: 8300000, guid: e70edf19e9acf0b4a9c3c560af054b1f, type: 3}
-  coinWorth: 1
+  spawner: {fileID: 0}
 --- !u!65 &3941774493099312388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -221,3 +221,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0100000035
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5431236689269218260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779007576726521908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e01e2285d3ff94e832a7809d963684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::CopyM\xFCnzeMagnet"
+  moveSpeed: 1.5

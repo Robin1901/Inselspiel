@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class CoinWorthUpgradeButton : MonoBehaviour
+public class MagnetRadiusUpgradeButton : MonoBehaviour
 {
     private Button button;
     private TextMeshProUGUI buttonText;
@@ -18,7 +18,8 @@ public class CoinWorthUpgradeButton : MonoBehaviour
     {
         if (CoinIslandManager.Instance == null || buttonText == null) return;
 
-        float price = CoinIslandManager.Instance.GetCoinWorthUpgradePrice();
+        float price = CoinIslandManager.Instance.GetMagnetRadiusUpgradePrice();
+
         buttonText.text = $"UPGRADE\n<sprite name=\"CoinIcon_0\">{price}";
     }
 
@@ -26,6 +27,6 @@ public class CoinWorthUpgradeButton : MonoBehaviour
     {
         if (CoinIslandManager.Instance == null) return;
 
-        CoinIslandManager.Instance.UpgradeCoinWorth();
+        CoinIslandManager.Instance.UpgradeMagnetRadius();
     }
 }

@@ -24,6 +24,9 @@ public class UpgradeDisplayText : MonoBehaviour
         float currentSpawn = CoinIslandManager.Instance.GetRoundedSpawnspeed();
         float nextSpawn = CoinIslandManager.Instance.GetNextRoundedSpawnspeed();
 
+        float currentRadius = CoinIslandManager.Instance.GetRoundedMagnetRadius();
+        float nextRadius = CoinIslandManager.Instance.GetNextRoundedMagnetRadius();
+
         string spawnDisplayText;
         if (currentSpawn <= 0.5f)
         {
@@ -35,7 +38,8 @@ public class UpgradeDisplayText : MonoBehaviour
             spawnDisplayText = $"{currentSpawn.ToString("0.0")}s → {nextSpawn.ToString("0.0")}s";
         }
 
-        textMesh.text = $"Coin Worth\n<sprite name=\"CoinIcon_0\">{currentWorth.ToString()}  →   <sprite name=\"CoinIcon_0\">{nextWorth.ToString()}\n\n" +
-                        $"Spawn Speed\n{spawnDisplayText}";
+        textMesh.text = $"<b>Coin Worth Amount</b>\n<sprite name=\"CoinIcon_0\">{currentWorth.ToString()}  →   <sprite name=\"CoinIcon_0\">{nextWorth.ToString()}\n\n" +
+                        $"<b>Coin Spawn Speed</b>\n{spawnDisplayText}\n\n" +
+                        $"<b>Player Magnet Radius</b>\n{currentRadius.ToString()}m  →   {nextRadius.ToString()}m";
     }
 }

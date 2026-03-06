@@ -11,13 +11,6 @@ public class SpawnspeedUpgradeButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
-
-        if (button == null)
-            Debug.LogError("SpawnspeedUpgradeButton: Button-Komponente fehlt!");
-
-        if (buttonText == null)
-            Debug.LogError("SpawnspeedUpgradeButton: TextMeshProUGUI fehlt!");
-
         button.onClick.AddListener(OnUpgradeButtonClicked);
     }
 
