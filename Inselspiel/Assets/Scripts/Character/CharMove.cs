@@ -60,5 +60,10 @@ public class CharMove : MonoBehaviour
         controller.Move(move * currentSpeed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (transform.position.y < -100.0f)
+        {
+            transform.position = new Vector3(0, 2, 0);
+        }
     }
 }
