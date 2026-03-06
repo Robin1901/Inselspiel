@@ -21,9 +21,21 @@ public class UpgradeDisplayText : MonoBehaviour
         float currentWorth = CoinIslandManager.Instance.GetRoundedCoinWorth();
         float nextWorth = CoinIslandManager.Instance.GetNextRoundedCoinWorth();
 
-        float currentSpawn = CoinIslandManager.Instance.GetRoundedSpawnSpeed();
-        float nextSpawn = CoinIslandManager.Instance.GetNextRoundedSpawnSpeed();
+        float currentSpawn = CoinIslandManager.Instance.GetRoundedSpawnspeed();
+        float nextSpawn = CoinIslandManager.Instance.GetNextRoundedSpawnspeed();
 
-        textMesh.text = $"Coin Worth\n{currentWorth.ToString("0.0")}  →  {nextWorth.ToString("0.0")}\n\nSpawn Speed\n{currentSpawn.ToString("0.0")}  →  {nextSpawn.ToString("0.0")}";
+        string spawnDisplayText;
+        if (currentSpawn <= 0.5f)
+        {
+            spawnDisplayText = "Maxed: 0.5s";
+
+        }
+        else
+        {
+            spawnDisplayText = $"{currentSpawn.ToString("0.0")}s → {nextSpawn.ToString("0.0")}s";
+        }
+
+        textMesh.text = $"Coin Worth\n<sprite name=\"CoinIcon_0\">{currentWorth.ToString()}  →   <sprite name=\"CoinIcon_0\">{nextWorth.ToString()}\n\n" +
+                        $"Spawn Speed\n{spawnDisplayText}";
     }
 }

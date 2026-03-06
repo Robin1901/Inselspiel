@@ -26,7 +26,7 @@ public class CoinWorthUpgradeButton : MonoBehaviour
         if (CoinIslandManager.Instance == null || buttonText == null) return;
 
         float price = CoinIslandManager.Instance.GetCoinWorthUpgradePrice();
-        buttonText.text = $"Cost: {price}";
+        buttonText.text = $"UPGRADE\n<sprite name=\"CoinIcon_0\">{price}";
     }
 
     void OnUpgradeButtonClicked()

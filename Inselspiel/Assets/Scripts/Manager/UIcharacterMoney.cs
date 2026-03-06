@@ -17,6 +17,6 @@ public class UIcharacterMoney : MonoBehaviour
 
     void Update()
     {
-        moneyText.text = "Money: " + coinIslandManager.characterMoney.ToString();
+        moneyText.text = coinIslandManager.characterMoney.ToString("F0");
     }
 }
