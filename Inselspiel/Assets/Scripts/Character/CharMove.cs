@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using System.Collections;
 
 public class CharMove : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class CharMove : MonoBehaviour
 
     public AudioSource source;
     public AudioClip sprung;
+
+    public Image fadeScreen;
+    private bool isRespawning = false;
+
+    private float airSpeedMultiplier = 1f;
+    private float airSpeedTarget = 1f;
+    private float airSpeedSmooth = 1.5f;
 
     void Start()
     {
@@ -37,16 +46,18 @@ public class CharMove : MonoBehaviour
 
         if (context.performed && controller.isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHight * -1.5f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHight * -1.7f * gravity);
             if (source != null) source.Play();
         }
     }
 
     void Update()
     {
-        if (CoinIslandManager.Instance != null && CoinIslandManager.Instance.inputBlocked)
+        if (CoinIslandManager.Instance != null && CoinIslandManager.Instance.inputBlocked) return;
+
+        if (controller.isGrounded && velocity.y < 0)
         {
-            return;
+            velocity.y = -2f;
         }
 
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
@@ -57,13 +68,53 @@ public class CharMove : MonoBehaviour
             currentSpeed = sprint;
         }
 
-        controller.Move(move * currentSpeed * Time.deltaTime);
+        if (!controller.isGrounded && velocity.y < 0)
+        {
+            airSpeedTarget = 0.35f;
+        }
+        else
+        {
+            airSpeedTarget = 1f;
+        }
+
+        airSpeedMultiplier = Mathf.Lerp(airSpeedMultiplier, airSpeedTarget, Time.deltaTime * airSpeedSmooth);
+
+        controller.Move(move * currentSpeed * airSpeedMultiplier * Time.deltaTime);
+
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        if (transform.position.y < -100.0f)
+        if (transform.position.y < -40.0f && !isRespawning)
         {
-            transform.position = new Vector3(0, 2, 0);
+            StartCoroutine(Respawn());
         }
+    }
+
+    IEnumerator Respawn()
+    {
+        isRespawning = true;
+
+        float duration = 1.75f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float alpha = timer / duration;
+            fadeScreen.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+
+        controller.enabled = false;
+        transform.position = new Vector3(0, 2, 0);
+        velocity = Vector3.zero;
+        controller.enabled = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        fadeScreen.color = new Color(0, 0, 0, 0);
+        airSpeedMultiplier = 1f;
+
+        isRespawning = false;
     }
 }
